@@ -12,15 +12,15 @@ export interface ChatResponse {
 export interface Choice {
     finish_reason: string;
     index:         number;
-    message:       Message;
+    message:       ResponseMessage;
 }
 
-export interface Message {
+export interface ResponseMessage {
     content: string;
     role:    "assistant";
 }
 
-export interface Usage {
+interface Usage {
     prompt_tokens:     number;
     completion_tokens: number;
     total_tokens:      number;
