@@ -55,7 +55,7 @@ export class ChatService {
                 minute: currentTime.getMinutes(),
             };
 
-            this.messagesHistory.push(this.responseMessage)
+            this.messagesHistory.push(this.responseMessage);
 
             this.userResponse = {
                 message: this.responseMessage,
