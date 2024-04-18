@@ -62,7 +62,6 @@ export class ChatService {
                 time: this.responseTime,
             };
 
-            console.log(this.messagesHistory);
             return this.userResponse;
 
         } catch {

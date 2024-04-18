@@ -12,6 +12,12 @@ $ npm install
 3. Get a API key from [ChatGPT API Free Reverse Proxy](https://github.com/PawanOsman/ChatGPT) project.
 4. Add the API key in the <kbd>.env.template</kbd> file, then change the name to <kbd>.env</kbd>.
 
+## Initial Config
+
+```
+The behavior of the AI assitant can be configurated in the "initial-config.ts" file. By changing the value of the "content" property, it's possible to indicate what behavior is expected.
+```
+
 ## Running the app
 
 ```bash
