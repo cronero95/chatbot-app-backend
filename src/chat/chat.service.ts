@@ -71,5 +71,13 @@ export class ChatService {
 
     deleteHistory(): void {
         this.messagesHistory = [...configMessage];
+        this.requestMessage = {
+            model:       "pai-001",
+            prompt:      "Human: Hello\\nAI:",
+            temperature: 0.5,
+            max_tokens:  256,
+            stop:        ["Human:", "AI:"],
+            messages:    this.messagesHistory,
+        };
     }
 }

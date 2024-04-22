@@ -1,6 +1,6 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript project to interact with [ChatGPT API Free Reverse Proxy](https://github.com/PawanOsman/ChatGPT).
+[Nest](https://github.com/nestjs/nest) framework TypeScript backend project to interact with [ChatGPT API Free Reverse Proxy](https://github.com/PawanOsman/ChatGPT). 
 
 ## Usage
 
@@ -31,6 +31,21 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+There are two possible requests to "http://localhost:3000/chat":
+1. POST by sending in the body a object with the below structure:
+```bash
+{
+    content: message
+}
+```
+A success POST request return a response with the below structure (look the interfaces folder for better understanding):
+```bash
+{
+    message: Message;
+    time: ResponseTime;
+}
+```
+2. DELETE by sending a simple delete request you clean the message history, starting a new chat.
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
