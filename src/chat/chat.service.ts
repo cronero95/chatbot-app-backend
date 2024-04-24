@@ -8,14 +8,7 @@ import { ChatResponse, ResponseTime, UserResponse } from './interfaces/request-r
 export class ChatService {
     private messagesHistory: Message[] = [...configMessage];
 
-    private requestMessage: RequestBody = {
-        model:       "pai-001",
-        prompt:      "Human: Hello\\nAI:",
-        temperature: 0.5,
-        max_tokens:  256,
-        stop:        ["Human:", "AI:"],
-        messages:    this.messagesHistory,
-    }
+    private requestMessage?: RequestBody;
 
     private responseMessage: Message;
     private responseTime: ResponseTime;
@@ -24,9 +17,16 @@ export class ChatService {
     private readonly apiKey: string = process.env.CHAT_AI_API_KEY;
     private readonly apiUrl: string = process.env.CHAT_AI_URL;
 
-    constructor(
-        
-    ) {}
+    constructor() {
+        this.requestMessage = {
+            model:       "pai-001",
+            prompt:      "Human: Hello\\nAI:",
+            temperature: 0.5,
+            max_tokens:  256,
+            stop:        ["Human:", "AI:"],
+            messages:    this.messagesHistory,
+        }
+    }
     
     async sendMessage(messageDto: MessageDto) {
         const {content} = messageDto;
